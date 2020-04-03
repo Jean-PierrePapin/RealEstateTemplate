@@ -1,8 +1,10 @@
 <?php
 
 function rt_realtors_option_page(){
-  $realtors_opts        = [];
-  global $wpdb;
+  /* $dir = plugin_dir_path( __FILE__ ); */
+  require_once('database.php' );
+  /* require_once( ABSPATH . 'update.php' ); */
+
   ?>
 
   <div id="content" class="wrap">
@@ -11,22 +13,22 @@ function rt_realtors_option_page(){
     <div id="content-main">
     <?php //menu_page_url( 'rt_plugin_listing_opts' ); ?>
 
-      <form enctype="" action="admin-post.php" method="POST" id="realtor_form" novalidate>
+      <form enctype="" action="<?php menu_page_url( 'rt_plugin_listing_opts' ); ?>" method="POST" id="" novalidate>
         <input type="hidden" name="action" value="rt_save_realtor">
         <?php //wp_nonce_field( 'rt_options_verify' ); ?>
         <div class="container">
-          <fieldset class="module aligned">
+          <fieldset class="">
             <!-- Name -->
             <div class="row">
               <div class="col-sm-8">
-                <label class="required" for="id_name"><?php echo __( 'Name', 'rt-template'); ?>:</label>
+                <label class="" for="id_name"><?php echo __( 'Name', 'rt-template'); ?>:</label>
                 <input type="text" name="name" class="" maxlength="200" required id="id_name">
               </div>
             </div>
             <!-- Upload photo -->
             <div class="row">
               <div class="col-sm-8">
-                <label class="required" for="id_photo"><?php echo __( 'Photo', 'rt-template'); ?>:</label>
+                <label class="" for="id_photo"><?php echo __( 'Photo', 'rt-template'); ?>:</label>
                 <input type="file" name="photo" accept="image/*" required id="id_photo">
               </div>
             </div>
@@ -34,28 +36,28 @@ function rt_realtors_option_page(){
             <div class="row">
               <div class="col-sm-8">
                 <label for="id_description"><?php echo __( 'Description', 'rt-template'); ?>:</label>
-                <textarea name="description" cols="40" rows="10" class="vLargeTextField" id="id_description">
+                <textarea name="description" cols="40" rows="10" class="" id="id_description">
                 </textarea>
               </div>
             </div>
             <!-- Phone number -->
             <div class="row">
               <div class="col-sm-8">
-                <label class="required" for="id_phone"><?php echo __( 'Phone', 'rt-template'); ?>:</label>
-                <input type="text" name="phone" class="vTextField" maxlength="20" required id="id_phone">
+                <label class="" for="id_phone"><?php echo __( 'Phone', 'rt-template'); ?>:</label>
+                <input type="text" name="phone" class="" maxlength="20" required id="id_phone">
               </div>
             </div>
             <!-- email -->
             <div class="row">
               <div class="col-sm-8">
-                <label class="required" for="id_email"><?php echo __( 'Email', 'rt-template'); ?>:</label>
-                <input type="text" name="email" class="vTextField" maxlength="50" required id="id_email">
+                <label class="" for="id_email"><?php echo __( 'Email', 'rt-template'); ?>:</label>
+                <input type="text" name="email" class="" maxlength="50" required id="id_email">
               </div>
             </div>
             <!-- Is mvp -->
             <div class="row">
               <div class="col-sm-8">
-                <input type="checkbox" name="is_mvp" id="id_is_mvp"><label class="vCheckboxLabel" for="id_is_mvp"><?php echo __( 'Is mvp', 'rt-template'); ?></label>
+                <input type="checkbox" name="is_mvp" id="id_is_mvp"><label class="" for="id_is_mvp"><?php echo __( 'Is mvp', 'rt-template'); ?></label>
               </div>
             </div>
             <!-- Hire Date -->
@@ -63,22 +65,16 @@ function rt_realtors_option_page(){
               <div class="col-sm-8">
                 <label for="id_hire_date_0"><?php echo __( 'Hire Date', 'rt-template'); ?>:</label>
                 <p class="datetime">
-                <?php echo __( 'Date', 'rt-template'); ?>: <input type="text" name="hire_date_0" value="2020-03-18" class="vDateField" size="10" id="id_hire_date_0">
-
-                <br>
-                <?php echo __( 'Time', 'rt-template'); ?>: <input type="text" name="hire_date_1" value="21:19:50" class="vTimeField" size="8" id="id_hire_date_1">
-
-
+                  <?php echo __( 'Date', 'rt-template'); ?>: <input type="text" name="hire_date_0" value="2020-03-18" class="vDateField" size="10" id="id_hire_date_0">
                 </p>
-                <input type="hidden" name="initial-hire_date_0" value="2020-03-18" id="initial-id_hire_date_0"><input type="hidden" name="initial-hire_date_1" value="21:19:50" id="initial-id_hire_date_1">
-                                        
+                <input type="hidden" name="hire_date" value="2020-03-18" id=""><input type="hidden" name="initial-hire_date_1" value="21:19:50" id="">                     
               </div> 
             </div>
             
           </fieldset>
           <!-- Save -->
           <!-- <div class="row">
-            <button type="submit" class="btn btn-primary"><?php //_e('Save', 'rt-template'); ?></button>
+            <button type="submit" value="submit" class="btn btn-primary"><?php //_e('Save', 'rt-template'); ?></button>
           </div> -->
 
           <!-- <script type="text/javascript"
@@ -104,6 +100,7 @@ function rt_realtors_option_page(){
         do_settings_sections( 'rt_plugin_listing_opts' );
         // output save settings button
         submit_button( __('Save Settings', 'rt-template' ) );
+        /* $wpdb->insert( $table_name, $item ); */
         ?>
 
       </form>
