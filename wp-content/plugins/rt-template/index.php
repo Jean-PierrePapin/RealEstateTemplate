@@ -22,7 +22,7 @@ define( 'REAL_ESTATE_PLUGIN_URL', __FILE__ );
 include( 'includes/activate.php' );
 include( 'includes/init.php' );
 /* include( 'process/save-post.php' ); */
-//include( dirname(REAL_ESTATE_PLUGIN_URL) . '/includes/widgets.php' );
+
 include( 'includes/admin/init.php' );
 //include( 'includes/admin/init_1.php' );
 include( 'includes/admin/listings-option.php' ); 

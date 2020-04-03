@@ -519,3 +519,4 @@ tutoriels WP:
 Section 10
 Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
 
+Handling form submissions in WP
