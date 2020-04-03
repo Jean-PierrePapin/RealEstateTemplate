@@ -1,0 +1,521 @@
+Nom de la base de donnees = starter_theme
+
+/** The name of the database for WordPress */
+define( 'DB_NAME', 'starter_theme' );
+
+/** MySQL database username */
+define( 'DB_USER', 'root' );
+
+/** MySQL database password */
+define( 'DB_PASSWORD', '' );
+
+/** MySQL hostname */
+define( 'DB_HOST', 'localhost' );
+
+/** Database Charset to use in creating database tables. */
+define( 'DB_CHARSET', 'utf8mb4' );
+
+/** The Database Collate type. Don't change this if in doubt. */
+define( 'DB_COLLATE', '' );
+--------------------------------------------------------------------------------------
+
+Taches a faire pour integrer les templates html en un theme Wordpress
+
+1. Creer 3 custome post types (realtor, listing, listings)
+2. Creer un menu pour les pages/templates 
+3. Creer une interface admin pour ajouter un realtor, un listing, des photos des listings, 
+4. Voir le document btre pour ajouter les fonctionnalites a ajouter
+5. Creer un plugin pour certaines fonctionnalites a  pour l'integrer dans le developpement de plugin Wordpress
+  5.1 Créer l'interface admin du custom post type pour ajouter les realtors et les listings dans la base de données avec les fonctionnalités CRUD, sous d'une table pour realtors et une pour listings
+  5.2 Créer les tables realtor et listings
+  5.3 Créer les fonctionnalités CRUD pour ajouter les realtors et les listings
+  5.4 
+6. Creer une base des donnees pour un listing, des listings, les realtors. Cela pourrait integrer dans un plugin pour certaines fonctionnalites
+7.
+
+
+------------------------------------------------------------------------------
+25/02/2020
+Utiliser les page templates pour faire des templates spécifiques pour les pages particulières pour les thèmes Wordpress
+https://developer.wordpress.org/themes/template-files-section/page-template-files/
+
+
+---------------------------------------------------------------------------
+To create a FOREIGN KEY constraint on the "realtorID" column when the "wp_real_estate_listings" table is already created, use the following SQL:
+
+ALTER TABLE wp_real_estate_listings ADD FOREIGN KEY (realtorID) REFERENCES wp_real_estate_realtor(realtorID)
+
+https://www.youtube.com/watch?v=S-JG1z6Bp3U
+ALTER TABLE `wp_real_estate_listings` ADD FOREIGN KEY (`realtor_fk`) REFERENCES `wp_real_estate_realtor`(`realtorID`) ON DELETE RESTRICT ON UPDATE CASCADE;
+
+===================================================================================
+MySQL queries pour changer les bases de données MySQL
+===================================================================================
+
+Créer une PRIMARY KEY
+---------------------
+ALTER TABLE `wp_real_estate_contact` ADD PRIMARY KEY( `listing`);
+
+Enlever une PRIMARY KEY
+-----------------------
+ALTER TABLE `wp_real_estate_contact` DROP PRIMARY KEY;
+
+
+Créer une base de données
+-------------------------
+CREATE TABLE `wp_real_estate_test` (
+    `ID` BIGINT(20) UNSIGNED NOT NULL AUTO_INCREMENT,
+    `recipe_id` BIGINT(20) UNSIGNED NOT NULL,
+    `rating` FLOAT(3,2) UNSIGNED NOT NULL,
+    `user_ip` VARCHAR(50) NOT NULL,
+    PRIMARY KEY (`ID`)
+) ENGINE=InnoDB;"
+
+
+DATABASE wp_real_estate_realtor
+realtorID int PRIMARY KEY
+name varchar200
+phone varchar50
+email varchar20
+is_mvp tinyint
+hire_date date
+photo blob
+description text
+
+
+7/03/2020
+Customiser l'interface Admin de wp
+https://wordpress.org/plugins/wp-custom-admin-interface/
+
+08/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+
+FAIT:
+-----
+
+09/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+
+FAIT:
+-----
+
+10/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+
+FAIT:
+-----
+
+12/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+
+FAIT:
+-----
+
+14/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+
+FAIT:
+-----
+
+15/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+
+
+FAIT:
+-----
+- Ajotuer des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS)
+
+(EN COURS)
+(EN ATTENTE)
+
+16/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS)
+
+(EN COURS)
+(EN ATTENTE)
+
+17/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+
+
+(EN COURS)
+(EN ATTENTE)
+
+
+18/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors
+
+
+(EN COURS)
+(EN ATTENTE)
+
+19/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+
+21/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Vidéo XXX => interface admin pour insérer les données directement dans la base de données
+
+22/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
+24/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
+25/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
+
+26/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
+
+27/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+- Création des fichiers options-page.php (ou autres pour afficher UI pour ajouter realtor ou listing dans DB) pour afficher les formulaires pour rentrer un realtor ou un listing dans les bases de données (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
+
+28/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+- Création des fichiers options-page.php (ou autres pour afficher UI pour ajouter realtor ou listing dans DB) pour afficher les formulaires pour rentrer un realtor ou un listing dans les bases de données (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
+29/03/2020
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+- Création des fichiers options-page.php (ou autres pour afficher UI pour ajouter realtor ou listing dans DB) pour afficher les formulaires pour rentrer un realtor ou un listing dans les bases de données (EN COURS)
+- Front End pour les fichiers realtors-option.php et listings-option.php (EN COURS)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
+
+--------------------------------------
++ Semaine du 30/03/2020 au 5/04/2020 +
+--------------------------------------
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+- Création des fichiers options-page.php (ou autres pour afficher UI pour ajouter realtor ou listing dans DB) pour afficher les formulaires pour rentrer un realtor ou un listing dans les bases de données (EN COURS)
+- Front End pour les fichiers realtors-option.php et listings-option.php (EN COURS)
+- Créer les envois des requêtes en php et javascript pour tester la solution la plus rapide et s'entraîner sur les deux languages (EN COURS) => update.php et database.php (https://codex.wordpress.org/Class_Reference/wpdb; https://jacobmartella.com/2018/01/17/add-wordpress-admin-page-data-custom-table/; )
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+
