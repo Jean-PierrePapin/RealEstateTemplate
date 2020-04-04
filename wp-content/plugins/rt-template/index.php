@@ -21,8 +21,7 @@ define( 'REAL_ESTATE_PLUGIN_URL', __FILE__ );
 // Includes
 include( 'includes/activate.php' );
 include( 'includes/init.php' );
-/* include( 'process/save-post.php' ); */
-
+include( 'process/save-post.php' );
 include( 'includes/admin/init.php' );
 //include( 'includes/admin/init_1.php' );
 include( 'includes/admin/listings-option.php' ); 
@@ -30,8 +29,7 @@ include( 'includes/admin/realtors-option.php' );
 include( 'includes/admin/menus.php' );
 include( 'includes/admin/options-page.php' );
 include( 'includes/admin/enqueue.php' );
-include( 'process/save-post.php' );
-
+include( 'process/database.php' );
 
 
 // Hooks

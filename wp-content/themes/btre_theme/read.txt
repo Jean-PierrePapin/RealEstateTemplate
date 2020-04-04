@@ -518,6 +518,18 @@ tutoriels WP:
 -------------
 Section 10
 Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+Section 6
+Vidéos 65 à 67
 
 Handling form submissions in WP
 https://wordpress.org/support/topic/saving-data-from-form-to-database-table/
+
+
+Webpack
+https://survivejs.com/webpack/developing/webpack-dev-server/
+
+
+
+--------------------------------------
++ Semaine du 06/04/2020 au 13/04/2020 +
+--------------------------------------

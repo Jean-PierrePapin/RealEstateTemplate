@@ -5,7 +5,7 @@
   </footer>
 
   <?php wp_footer(); ?>
-  
+  <script src="bundled.js"></script>
 </body>
 
 </html>

@@ -13,15 +13,17 @@ function rt_save_post_admin( $post_id, $post, $update ){
 }
 
 function rt_save_realtor() {
- /* if( !current_user_can( 'edit_theme_options' ) ) {
+ if( !current_user_can( 'edit_theme_options' ) ) {
    wp_die( __( 'You are not allowed to be on this page', 'rt-template' ) );
  }
 
- check_admin_referer( 'rt_options_verify' ); */
- echo '<pre>';
+ check_admin_referer( 'rt_options_verify' );
+ /* echo '<pre>';
  print_r($_POST);
  echo '</pre>';
-
+ */
+ global $wpdb;
+ $wpdb->insert( $wpdb->prefix . "real_estate_realtor", $item );
 
 }
 

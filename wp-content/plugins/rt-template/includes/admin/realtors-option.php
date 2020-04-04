@@ -2,7 +2,7 @@
 
 function rt_realtors_option_page(){
   /* $dir = plugin_dir_path( __FILE__ ); */
-  require_once('database.php' );
+  include( '../process/database.php' );
   /* require_once( ABSPATH . 'update.php' ); */
 
   ?>
@@ -73,9 +73,10 @@ function rt_realtors_option_page(){
             
           </fieldset>
           <!-- Save -->
-          <!-- <div class="row">
-            <button type="submit" value="submit" class="btn btn-primary"><?php //_e('Save', 'rt-template'); ?></button>
-          </div> -->
+          <div class="row">
+            <button type="submit" value="submit" class="btn btn-primary"><?php _e('Save', 'rt-template'); ?></button>
+            <input type="submit" value="submit">
+          </div>
 
           <!-- <script type="text/javascript"
                   id="django-admin-form-add-constants"
@@ -93,14 +94,14 @@ function rt_realtors_option_page(){
         </div>
 
         <?php
-        // output security fields for the registered setting "wporg_options"
+        /* // output security fields for the registered setting "wporg_options"
         settings_fields( 'rt_realtor_options' );
         // output setting sections and their fields
         // (sections are registered for "wporg", each field is registered to a specific section)
         do_settings_sections( 'rt_plugin_listing_opts' );
         // output save settings button
         submit_button( __('Save Settings', 'rt-template' ) );
-        /* $wpdb->insert( $table_name, $item ); */
+         $wpdb->insert( $table_name, $item ); */
         ?>
 
       </form>

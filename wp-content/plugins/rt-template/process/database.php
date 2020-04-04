@@ -8,6 +8,7 @@ $phone          = $_POST['phone'];
 $email          = $_POST['email'];
 $is_mvp         = false;
 $date           = $_POST['hire_date'];
+$id             = $_POST['realtorID'];
 
 // Origine https://jacobmartella.com/2018/01/17/add-wordpress-admin-page-data-custom-table/
 global $wpdb;
@@ -21,11 +22,12 @@ if ( $default_row != null ){
 }
 
 $item           = [
+  $id,
   $name,
-  $photo,
-  $description,
   $phone,
   $email,
+  $date,
   $is_mvp,
-  $date
+  $photo,
+  $description  
 ];
