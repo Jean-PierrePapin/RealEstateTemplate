@@ -98,10 +98,10 @@ function rt_realtors_option_page(){
         settings_fields( 'rt_realtor_options' );
         // output setting sections and their fields
         // (sections are registered for "wporg", each field is registered to a specific section)
-        do_settings_sections( 'rt_plugin_listing_opts' );
+        do_settings_sections( 'rt_plugin_realtor_opts' );
         // output save settings button
-        submit_button( __('Save Settings', 'rt-template' ) );
-         $wpdb->insert( $table_name, $item ); */
+        submit_button( __('Save Settings', 'rt-template' ) ); */
+         /* $wpdb->insert( $table_name, $item ); */
         ?>
 
       </form>
