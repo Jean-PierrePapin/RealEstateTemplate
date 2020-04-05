@@ -18,12 +18,20 @@ function rt_save_realtor() {
  }
 
  check_admin_referer( 'rt_options_verify' );
- /* echo '<pre>';
+ 
+ echo '<pre>';
  print_r($_POST);
  echo '</pre>';
- */
- global $wpdb;
- $wpdb->insert( $wpdb->prefix . "real_estate_realtor", $item );
+
+ 
+ /* include( 'database.php' ); */
+
+
+
+
+ // Envoi des données dans la base de données wp_starterthemereal_estate_realtor
+ /* global $wpdb;
+ $wpdb->insert( $wpdb->prefix . "real_estate_realtor", $item ); */
 
 }
 

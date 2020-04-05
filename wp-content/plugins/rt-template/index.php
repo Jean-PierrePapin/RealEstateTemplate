@@ -1,7 +1,7 @@
 <?php
 /*
 * Plugin Name: Real Estate plugin
-* Description: A simple WordPress plugin that allows to add realtor and listings
+* Description: A simple WordPress plugin that allows to add realtor and listings for a *  * real estate web site
 * Version: 1.0
 * Author: Sam The Coder
 * Author URI: None
@@ -29,7 +29,7 @@ include( 'includes/admin/realtors-option.php' );
 include( 'includes/admin/menus.php' );
 include( 'includes/admin/options-page.php' );
 include( 'includes/admin/enqueue.php' );
-include( 'process/database.php' );
+/* include( 'process/database.php' ); */
 
 
 // Hooks

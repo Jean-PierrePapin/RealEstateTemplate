@@ -2,8 +2,9 @@
 
 function rt_realtors_option_page(){
   /* $dir = plugin_dir_path( __FILE__ ); */
-  include( '../process/database.php' );
+  include( ABSPATH . 'wp-content/plugins/rt-template/process/database.php' );
   /* require_once( ABSPATH . 'update.php' ); */
+
 
   ?>
 
@@ -13,7 +14,7 @@ function rt_realtors_option_page(){
     <div id="content-main">
     <?php //menu_page_url( 'rt_plugin_listing_opts' ); ?>
 
-      <form enctype="" action="<?php menu_page_url( 'rt_plugin_listing_opts' ); ?>" method="POST" id="" novalidate>
+      <form enctype="" action="admin-post.php" method="POST" id="" novalidate>
         <input type="hidden" name="action" value="rt_save_realtor">
         <?php //wp_nonce_field( 'rt_options_verify' ); ?>
         <div class="container">
@@ -73,10 +74,10 @@ function rt_realtors_option_page(){
             
           </fieldset>
           <!-- Save -->
-          <div class="row">
+          <!-- <div class="row">
             <button type="submit" value="submit" class="btn btn-primary"><?php _e('Save', 'rt-template'); ?></button>
             <input type="submit" value="submit">
-          </div>
+          </div> -->
 
           <!-- <script type="text/javascript"
                   id="django-admin-form-add-constants"
@@ -94,14 +95,14 @@ function rt_realtors_option_page(){
         </div>
 
         <?php
-        /* // output security fields for the registered setting "wporg_options"
+        // output security fields for the registered setting "wporg_options"
         settings_fields( 'rt_realtor_options' );
         // output setting sections and their fields
         // (sections are registered for "wporg", each field is registered to a specific section)
-        do_settings_sections( 'rt_plugin_realtor_opts' );
+        /* do_settings_sections( '' ); */
         // output save settings button
-        submit_button( __('Save Settings', 'rt-template' ) ); */
-         /* $wpdb->insert( $table_name, $item ); */
+        submit_button( __('Save Settings', 'rt-template' ) );
+         
         ?>
 
       </form>
