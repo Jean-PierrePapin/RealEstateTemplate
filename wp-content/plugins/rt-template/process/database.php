@@ -6,6 +6,7 @@ $photo          = $_POST['photo'];
 $description    = $_POST['description'];
 $phone          = $_POST['phone'];
 $email          = $_POST['email'];
+$userid         = $_POST['user_id'] = get_current_user_id();
 $is_mvp         = false;
 $date           = $_POST['hire_date'];
 $id             = $_POST['realtorID'];
@@ -27,7 +28,12 @@ $item           = [
   $phone,
   $email,
   $date,
+  $userid,
   $is_mvp,
   $photo,
   $description  
 ];
+
+ echo '<pre>';
+ print_r($item);
+ echo '</pre>';

@@ -17,11 +17,11 @@ function rt_save_realtor() {
    wp_die( __( 'You are not allowed to be on this page', 'rt-template' ) );
  }
 
- check_admin_referer( 'rt_options_verify' );
+ /* check_admin_referer( 'rt_options_verify' ); */
  
- echo '<pre>';
+ /* echo '<pre>';
  print_r($_POST);
- echo '</pre>';
+ echo '</pre>'; */
 
  
  /* include( 'database.php' ); */
@@ -30,8 +30,8 @@ function rt_save_realtor() {
 
 
  // Envoi des données dans la base de données wp_starterthemereal_estate_realtor
- /* global $wpdb;
- $wpdb->insert( $wpdb->prefix . "real_estate_realtor", $item ); */
+ global $wpdb;
+ $wpdb->insert( $wpdb->prefix . "real_estate_realtor", $item, null );
 
 }
 

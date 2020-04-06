@@ -534,10 +534,50 @@ https://survivejs.com/webpack/developing/webpack-dev-server/
 
 
 
-
-
-
-
---------------------------------------
+---------------------------------------
 + Semaine du 06/04/2020 au 13/04/2020 +
---------------------------------------
+---------------------------------------
+
+A FAIRE:
+--------
+- Ajouter les realtors ou les listings avec l'interface admin de Wordpress
+- Ajouter cette fonctionnalité ci-dessus dans le plugin au lieu du thème WP
+- Ajouter la création des realtors et limiter l'accèes des realtors dans l'interface admin de wordpress
+- Ajouter un menu dans la partie admin un menu pour les fonctionnalités du plugin https://developer.wordpress.org/plugins/administration-menus/top-level-menus/
+- Ajouter les utilisateurs avec les niveaux de droits (user pour realtor afin de pouvoir publier leurs listings)
+- Créer le code pour ajouter les listings et les realtors avec le plugin et revoir les tutoriels + interface admin pour insérer les données directement dans la base de données
+
+
+FAIT:
+-----Structure du plugin rt-template
+-------------------------------
+BUT: Le plugin doit permettre de rajouter aux bases de données qui créent les realtors et les listings sur l'interface admin. Ensuite, le theme btre_theme permet de gérer les views de ses bases de données.
+- Ajouter des colonnes personnalisées pour les custom post types 'realtor' et 'listing' (EN COURS) => mettre les deux action hooks en même temps fait bugger WP 
+add_action( 'admin_init', 'rt_listing_admin_init', 100 );
+add_action( 'admin_init', 'rt_realtor_admin_init' );
+dans le fichier index.php
+- Création des fichiers listings-option.php et realtors-option.php pour remplir les formulaires pour publier les listings et les realtors (EN COURS)
+- Création des fichiers options-page.php (ou autres pour afficher UI pour ajouter realtor ou listing dans DB) pour afficher les formulaires pour rentrer un realtor ou un listing dans les bases de données (EN COURS)
+- Front End pour les fichiers realtors-option.php et listings-option.php (EN COURS)
+- Créer les envois des requêtes en php et javascript pour tester la solution la plus rapide et s'entraîner sur les deux languages (EN COURS) => update.php et database.php (https://codex.wordpress.org/Class_Reference/wpdb; https://jacobmartella.com/2018/01/17/add-wordpress-admin-page-data-custom-table/; )
+- Faire un README.txt pour expliquer le plugin rt-template (FAIT)
+
+
+(EN COURS)
+(EN ATTENTE)
+
+tutoriels WP:
+-------------
+Section 10
+Vidéos 112, 113, 114 => interface admin pour insérer les données directement dans la base de données
+Section 6
+Vidéos 65 à 67 webpack et la configuration avec wordpress
+
+Handling form submissions in WP
+https://wordpress.org/support/topic/saving-data-from-form-to-database-table/
+
+
+Webpack
+https://survivejs.com/webpack/developing/webpack-dev-server/
+
+
