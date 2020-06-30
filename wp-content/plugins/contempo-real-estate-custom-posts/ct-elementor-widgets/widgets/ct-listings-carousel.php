@@ -390,7 +390,7 @@ class CT_Listings_Carousel extends Widget_Base {
 			        1000:{
 			            items: 3,
 			            nav: true,
-			            loop: false
+			            loop: true
 			        }
 			    }
 			});

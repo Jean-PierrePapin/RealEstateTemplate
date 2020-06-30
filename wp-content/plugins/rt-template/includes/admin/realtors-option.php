@@ -2,7 +2,7 @@
 
 function rt_realtors_option_page(){
   /* $dir = plugin_dir_path( __FILE__ ); */
-  include( ABSPATH . 'wp-content/plugins/rt-template/process/database.php' );
+  /* include( ABSPATH . 'wp-content/plugins/rt-template/process/database.php' ); */
   /* require_once( ABSPATH . 'update.php' ); */
 
 

@@ -26,6 +26,10 @@ This plugin does NOT come with template files those will need to be created for 
 
 == Changelog ==
 
+= 2.7.2 =
+* Bug fix for CT Listings Carousel Elementor module loop behavior
+= 2.7.1 =
+* Added "Complex" labels 
 = 2.7.0 =
 * Added "CT Listings Table" module for Elementor
 = 2.6.9 =
