@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * File to store the data from the realtor post type in order to use them later
+ */
+
 // $realtors_opts        = [];
 $name           = $_POST['name'];
 $photo          = $_POST['photo'];

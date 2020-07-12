@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * File to add customized columns for the custom post types "Listing" and "Realtor"
+ */
+
 function rt_add_new_listing_columns( $columns ){
   $new_columns                  = [];
   $new_columns['title']         = __( 'Title', 'listing' );

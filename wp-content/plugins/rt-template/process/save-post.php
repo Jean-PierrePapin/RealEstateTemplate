@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * File to save the metadata for listing and realtor metadatas
+ */
+
 function rt_save_post_admin( $post_id, $post, $update ){
   $realtor_data             =   get_post_meta( $post_id, 'realtor_data', true );
   $realtor_data             =   empty( $recipe_data ) ? [] : $recipe_data;

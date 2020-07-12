@@ -1,5 +1,8 @@
 <?php
 
+/**
+ * File to enqueue the bootstrap.css file  except for the realtor page
+ */
 function rt_admin_scripts(){
   if( !isset($_GET['page']) || $_GET['page'] != "rt_realtors_option" ) {
     return;

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * File which contains the functions for creating the custom post types "Realtor" and "Listing"
+ */
+
 // Realtor custom post type
 function rt_template_realtor_init(){
   $labels = array(
@@ -34,7 +38,7 @@ function rt_template_realtor_init(){
       'description'         =>  'A simple realtor',
       'public'              =>  true,
       'publicly_queryable'  =>  true,
-      'show_ui'             =>  true,
+      'show_ui'             =>  true, // to show the custom post type UI or not
       'show_in_menu'        =>  true,
       'query_var'           =>  true,
       'rewrite'             =>  array( 'slug' => 'realtor' ),

@@ -1,5 +1,9 @@
 <?php
 
+/**
+ * File which creates specific DB for the data of the custom post types
+ */
+
 function rt_activate_plugin() {
   // 5.8 < 5.0
   if( version_compare( get_bloginfo( 'version' ), '5.0', '<' ) ){

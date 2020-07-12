@@ -1,0 +1,51 @@
+Structure du plugin rt-template
+-------------------------------
+BUT: Le plugin doit permettre de rajouter aux bases de données qui créent les realtors et les listings sur l'interface admin. Ensuite, le theme btre_theme permet de gérer les views de ses bases de données.
+
+5/04/2020
+
+3 dossiers:
+-----------
+- assets contient les dossiers css et js pour la part front end et les fichiers JS pour les besoins du plugin
+- includes contien
+t le dossier admin et les fichiers activate.php et init.php servant les bases de données et les custome post types realtor et listings
+- process contient 3 fichiers database.php (définit les variables à sauver dans les bases de données), save-post.php (avec la fonction pour sauver dans les DB) et update.php (vide)
+
+Description de l'enregistrement des données realtors vers la base de données:
+-----------------------------------------------------------------------------
+
+Les fichiers concernés sont les suivants:
+- realtors-option.php
+- save-post.php
+- init.php
+- menus.php
+- database.php
+
+Il n'y a pas de save-options.php car les données sont soumises directement dans la base de de données wp_starterthemereal_estate_realtor.
+
+
+-----------------------------------------------------------------------------------------
+Utiliser composer avec https://github.com/ptahdunbar/wp-skeleton-plugin à l'avenir
+Mais utiliser la structure sur https://developer.wordpress.org/plugins/plugin-basics/best-practices/#folder-structure
+
+30/06/2020
+Refaire le plugin depuis le début en utilisant le fichier du plugin-name.php ou index.php pour organiser le plugin, ensuite utiliser une class
+
+Solution
+Insérer les valeurs dans le custom post type et utiliser un template spécifique pour rentrer les valeurs enregistrées
+https://www.google.com/search?q=wordpres+how+to+customize+the+admin+page+for+custom+post+type&oq=wordpres+how+to+customize+the++admin+page+for+custom+post+type&aqs=chrome..69i57j33l7.30316j0j7&sourceid=chrome&ie=UTF-8
+
+06/07/2020
+Enlever le admin page UI pour en recréer une à partir de rien
+https://wordpress.stackexchange.com/questions/108891/how-to-create-my-own-edit-php-admin-page-code-or-template-for-my-custom-post-typ
+
+12/07/2020
+Customize Edit Post screen for Custom Post Types?
+https://wordpress.stackexchange.com/questions/2279/customize-edit-post-screen-for-custom-post-types
+
+Essayer d'utiliser ACF (Advanced Custom Fields) et Custom Post Type UI
+
+
+
+
+
