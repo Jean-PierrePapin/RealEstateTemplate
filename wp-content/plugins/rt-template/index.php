@@ -38,8 +38,8 @@ add_action( 'init', 'rt_template_realtor_init' );                           // C
 add_action( 'init', 'rt_template_listing_init', 100 );                      // Create the custom post types listing
 //add_action( 'init', 'rt_template_listings_init', 10 );                    // Create the custom post types listings
 //add_action( 'save_post_realtor_listing', 'rt_save_post_admin', 10, 3 );   // Save the metadata for realtor and listing
-//add_action( 'admin_init', 'rt_listing_admin_init', 100 );                 // Add column to the custom post types listing
-add_action( 'admin_init', 'rt_realtor_admin_init' );                        // Add column to the custom post types realtor
+add_action( 'admin_init', 'rt_listing_admin_init', 1000 );                 // Add column to the custom post types listing
+add_action( 'admin_init', 'rt_realtor_admin_init', 200  );                        // Add column to the custom post types realtor
 //add_action( 'admin_menu', 'rt_listing_admin_menus', 100 );                // Add the UI for the listing options
 //add_action( 'admin_menu', 'rt_realtor_admin_menus' );                     // Add the UI for the realtor options
 add_action( 'wp_enqueue_scripts', 'rt_enqueue_scripts', 100 );              // Enqueue the bootstrap.css file for the admin UI

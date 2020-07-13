@@ -46,6 +46,8 @@ https://wordpress.stackexchange.com/questions/2279/customize-edit-post-screen-fo
 Essayer d'utiliser ACF (Advanced Custom Fields) et Custom Post Type UI
 
 
-
+13/07/2020
+There has been a critical error on your website. Please check your site admin email inbox for instructions.
+Résolu en séparant deux fichiers à partir du fichier original columns.php
 
 
